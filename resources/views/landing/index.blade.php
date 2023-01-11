@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/card.css') }}">
 
-    <title>Khayangan Universitas</title>
+    <link rel="icon" href="{{asset('img/k3.png')}}" type="image/gif" sizes="16x16">
+    <title>
+        Khayangan Universitas
+    </title>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">

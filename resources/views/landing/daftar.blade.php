@@ -14,7 +14,7 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/card.css') }}">
-
+    <link rel="icon" href="{{asset('img/k3.png')}}" type="image/gif" sizes="16x16">
     <title>Khayangan Universitas</title>
 </head>
 
@@ -71,7 +71,7 @@
             </div>
         </div>
     </nav>
-    
+
  {{-- MAIN CONTENT --}}
     <main role="main" class="container">
         <h1 class="mt-5"><h1>TATA CARA PENDAFTARAN PESERTA MAHASISWA BARU TAHUN 2023-2024</h1></h1>
