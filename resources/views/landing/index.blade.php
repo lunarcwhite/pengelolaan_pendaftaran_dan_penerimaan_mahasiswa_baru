@@ -54,19 +54,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Beranda</a>
+                        <a class="nav-link" href="#home">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Program Studi</a>
+                        <a class="nav-link" href="#service">Program Studi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Biaya Kuliah</a>
+                        <a class="nav-link" href="#team">Rektor & Jajaran</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Beasiswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Kontak</a>
+                        <a class="nav-link" href="#footer">Kontak</a>
                     </li>
                 </ul>
                 <a href="/pendaftaran" class="btn btn-brand ms-lg-3">Pendaftaran <span
@@ -385,7 +385,7 @@
 
 
     <footer>
-        <div class="footer-top text-center">
+        <div id="footer" class="footer-top text-center">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">

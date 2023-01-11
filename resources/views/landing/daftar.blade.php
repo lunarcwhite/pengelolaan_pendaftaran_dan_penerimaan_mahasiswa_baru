@@ -51,22 +51,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Program Studi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Biaya Kuliah</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Beasiswa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kontak</a>
+                        <a class="nav-link" href="#home">Beranda</a>
                     </li>
                 </ul>
-                <a href="/pendaftaran" class="btn btn-brand ms-lg-3">Pendaftaran <span
+                <a href="/" class="btn btn-brand ms-lg-3">Kembali <span
                         class="badge text-bg-info">Online</span></a>
             </div>
         </div>
@@ -82,7 +70,7 @@
                     <p></p>
                 
                     <ol class="steps">
-                        <li>Membuat <strong><a href="/register"><em>account</em></a></strong> di situs penerimaan UI
+                        <li>Membuat <strong><a href="/register"><em>account</em></a></strong> di situs Universitas Khayangan
                             <p class="small">Klik <em>link</em> <strong>Buat Account</strong> di kanan atas lalu isi formulir yang muncul</p></li>
                             <li>Mengunggah <strong>foto</strong> berwarna ukuran 4x6 cm
                         <p class="small">Anda harus mengunggah foto sebelum dapat membuat pendaftaran</p>
