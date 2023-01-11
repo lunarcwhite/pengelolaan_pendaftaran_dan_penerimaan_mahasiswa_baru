@@ -247,6 +247,7 @@
                     </div>
                 </div>
             </div>
+            <br>
             <div class="containers">
                 <div class="row">
                     <div class="col-md-4 col-sm-12">
@@ -254,7 +255,7 @@
                             <div class="face face1">
                                 <div class="content">
                                     <img src="img/Fakultas-Ekonomi-dan-Bisnis.webp">
-                                    <h3>Fakultas Ekonomi dan Bisnis</h3>
+                                    <h3>Fakultas Ekonomi dan Bisnis</h3> 
                                 </div>
                             </div>
                             <div class="face face2">
