@@ -15,4 +15,8 @@ class LandingController extends Controller
     {
         return view('landing.daftar');
     }
+    public function cek()
+    {
+        return view('ceklulus.cek');
+    }
 }
