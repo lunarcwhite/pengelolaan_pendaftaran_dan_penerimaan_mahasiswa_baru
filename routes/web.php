@@ -56,6 +56,7 @@ Route::controller(DashboardController::class)->middleware('auth')->group(functio
 Route::controller(SeleksiController::class)->middleware('auth')->group(function () {
     Route::get('/dashboard/seleksi', 'index');
     Route::get('/dashboard/send-mail', 'email')->middleware('admin')->name('emails.Pemberitahuan');
+    Route::get('/dashboard/send-email/pengingat', 'emailPengingat')->middleware('admin')->name('emailPengingat');
     Route::get('/dashboard/pendaftar/export', 'export')->name('export.excel')->middleware('admin');
     Route::post('/admin/fungsi-seleksi', 'seleksi')->middleware('admin');
     Route::get('/dashboard/pdf', 'print_pdf')->name('dashboard.pdf')->middleware('admin');

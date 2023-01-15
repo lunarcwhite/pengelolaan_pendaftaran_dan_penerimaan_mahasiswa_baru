@@ -12,15 +12,17 @@
                     </div>
                     <hr />
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="overview-wrap">
+                        <div class="overview-wrap">
+                            <div class="col-md-6">
+                                <a href="{{ route('emailPengingat') }}" class="btn btn-info"><i
+                                    class="fa fa-box"></i>
+                                    Kirim Email Pengingat Pendaftaran</a>
+                                </div>
+                                <div class="col-md-8">
                                 <form action="/dashboard/nonaktif" method="post">
                                     @method('patch')
                                     @csrf
                                     @foreach ($calonMhs as $value)
-                                        {{-- <input type="hidden" value="{{$value->no_reg }}"
-                            name="reg[]">
-                            <input type="hidden" value="{{ $value->status }}" name="status[]"> --}}
                                     @endforeach
                                     @if ($value->can_update == true)
                                         <button type="submit" name="Submit" id="Submit" class="btn btn-warning">Nonaktifkan
