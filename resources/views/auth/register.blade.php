@@ -33,7 +33,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Main CSS-->
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet" media="all">
-
+    <link rel="icon" href="{{asset('img/k3.png')}}" type="image/gif" sizes="16x16">
 </head>
 
 <body class="animsition">
