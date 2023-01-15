@@ -64,6 +64,7 @@
                             <div class="form-group">
                                 <label>Kewarganegaraan:</label>
                                 <select class="form-control" name="kewarganegaraan">
+                                    <option value="">--> Pilih Kewarganegaraan <--</option>
                                     <option value="WNI">Warga Negara Indonesia</option>
                                     <option value="WNA">Warga Negara Asing</option>
                                 </select>
@@ -73,6 +74,7 @@
                             <div class="form-group">
                                 <label>Agama:</label>
                                 <select class="form-control" name="agama">
+                                    <option value="">Plih Agama</option>
                                     <option value="Islam">Islam</option>
                                     <option value="Kristen">Kristen</option>
                                     <option value="Katolik">Katolik</option>
@@ -97,6 +99,7 @@
                                 <label>Email:</label>
                                 <input type="email" name="email_daftar" class="form-control"
                                     placeholder="Masukan Alamat Email">
+                                    <p class="small">Email Ini digunakan untuk. <br /> Pemberitahuan Kelulusan </p>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -133,11 +136,11 @@
                             <div class="form-group">
                                 <label>Pendidikan Terakhir:</label>
                                 <select class="form-control" name="pendidikan">
-
                                     <option>Pendidikan Terakhir</option>
                                     <option value="SMA">SMA</option>
                                     <option value="SMK">SMK</option>
-                                    
+                                    <option value="MA">MA</option>
+                                    <option value="Sederajat">Sederajat</option>
                                 </select>
                             </div>
                         </div>
@@ -173,41 +176,41 @@
                                         <tr>
                                             <td class="align-middle">Bahasa Indonesia</td>
                                             <td><input type="number" name="indonesia[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                             <td><input type="number" name="indonesia[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                             <td><input type="number" name="indonesia[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                             <td><input type="number" name="indonesia[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                             <td><input type="number" name="indonesia[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                         </tr>
                                         <tr>
                                             <td class="align-middle">Bahasa Inggris</td>
                                             <td><input type="number" name="inggris[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                             <td><input type="number" name="inggris[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                             <td><input type="number" name="inggris[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                             <td><input type="number" name="inggris[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                             <td><input type="number" name="inggris[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                         </tr>
                                         <tr>
                                             <td class="align-middle">Matematika</td>
                                             <td><input type="number" name="mtk[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                             <td><input type="number" name="mtk[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                             <td><input type="number" name="mtk[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                             <td><input type="number" name="mtk[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                             <td><input type="number" name="mtk[]" class="form-control"
-                                                    style="width: 60px;height: 50px" value="0"></td>
+                                                    style="width: 60px;height: 50px" placeholder="0"></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -245,6 +248,7 @@
                             <div class="form-group">
                                 <label>Upload Berkas Pendukung</label>
                                 <input type="file" name="berkas" class="form-control">
+                                <p class="small">Disatukan dalam file PDF. <br /> Yang wajib data : Rekap Nilai Rapot, Surat Kelulusan, dan Nilai Ujian <br/> Sertifikat Prestasi juga digabung dalam satu file PDF Ini. </p>
                             </div>
                         </div>
                     </div>

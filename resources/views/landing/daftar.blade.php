@@ -50,12 +50,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Beranda</a>
-                    </li>
                 </ul>
-                <a href="/" class="btn btn-brand ms-lg-3">Kembali <span
-                        class="badge text-bg-info">Online</span></a>
+                <a href="/" class="btn btn-brand ms-lg-3">Kembali</a>
             </div>
         </div>
     </nav>

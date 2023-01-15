@@ -220,7 +220,7 @@ class DashboardController extends Controller
     {
         $pendaftar = Pendaftar::find($id)->first();
         $jurusan = Jurusan::all();
-        $pilihanJurusan = Jurusan::where('id', $pendaftar->jurusan_id)->first();
+        $pilihanJurusan = Jurusan::where('kode_jurusan', $pendaftar->jurusan_kode)->first();
         return view('dashboard.showPendaftar', compact('pendaftar', 'pilihanJurusan', 'jurusan'));
     }
 
