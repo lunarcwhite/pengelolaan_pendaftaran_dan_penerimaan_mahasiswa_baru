@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/card.css') }}">
 
-    <title>Khayangan Universitas</title>
+    <link rel="icon" href="{{asset('img/k3.png')}}" type="image/gif" sizes="16x16">
+    <title>
+        Khayangan Universitas
+    </title>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
@@ -51,19 +54,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Beranda</a>
+                        <a class="nav-link" href="#home">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Program Studi</a>
+                        <a class="nav-link" href="#service">Program Studi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Biaya Kuliah</a>
+                        <a class="nav-link" href="#team">Rektor & Jajaran</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Beasiswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Kontak</a>
+                        <a class="nav-link" href="#footer">Kontak</a>
                     </li>
                 </ul>
                 <a href="/pendaftaran" class="btn btn-brand ms-lg-3">Pendaftaran <span
@@ -247,6 +250,7 @@
                     </div>
                 </div>
             </div>
+            <br>
             <div class="containers">
                 <div class="row">
                     <div class="col-md-4 col-sm-12">
@@ -254,7 +258,7 @@
                             <div class="face face1">
                                 <div class="content">
                                     <img src="img/Fakultas-Ekonomi-dan-Bisnis.webp">
-                                    <h3>Fakultas Ekonomi dan Bisnis</h3>
+                                    <h3>Fakultas Ekonomi dan Bisnis</h3> 
                                 </div>
                             </div>
                             <div class="face face2">
@@ -381,7 +385,7 @@
 
 
     <footer>
-        <div class="footer-top text-center">
+        <div id="footer" class="footer-top text-center">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
