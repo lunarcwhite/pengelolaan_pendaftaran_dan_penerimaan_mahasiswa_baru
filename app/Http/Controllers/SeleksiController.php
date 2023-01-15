@@ -13,6 +13,7 @@ use App\Mail\EmailNotification;
 use App\Mail\PemberitahuanEmail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use App\Mail\EmailPengingat;
 
 class SeleksiController extends Controller
 {
@@ -97,6 +98,18 @@ class SeleksiController extends Controller
         Mail::to($emails)->queue(new PemberitahuanEmail($details));
         $notification = [
             'message' => 'Email Terkirim Sukses',
+            'alert-type' => 'success'
+        ];
+        return redirect()->back()->with($notification);
+    }
+    public function emailPengingat()
+    {
+        $emails = User::pluck('email');
+        foreach($emails as $email){
+            Mail::to($email)->queue(new EmailPengingat());
+        }
+        $notification = [
+            'message' => 'Email Pengingat Berhasil Dikirim',
             'alert-type' => 'success'
         ];
         return redirect()->back()->with($notification);
