@@ -3,7 +3,7 @@
 
 {{ $details['body'] }}
 @component('mail::button', ['url' => $details['url']])
-Button Text
+Click Here
 @endcomponent
 
 Thanks,<br>
