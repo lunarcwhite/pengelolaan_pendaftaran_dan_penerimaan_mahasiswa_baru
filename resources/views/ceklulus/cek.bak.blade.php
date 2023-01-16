@@ -1,3 +1,4 @@
+
 <html lang="id">
 	<head><base href="">
 		<title>Cek Kelulusan</title>
@@ -5,8 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="shortcut icon" href="{{asset('img/k3.png')}}" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-		<link href="{{ asset('fix-theme/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('fix-theme/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('cek/fix-theme/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('cek/fix-theme/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('cek/fix-theme/assets/css/style.css') }}" rel="stylesheet" type="text/css" />
 
         <style>
             [v-cloak]>* {
@@ -37,8 +39,8 @@
 									</button>
 
                                     <a href="/">
-                                        <h5 class="text-white"><img alt="Logo" src="{{asset('img/k3.png')}}" class="h-40px logo" /> &nbsp; &nbsp;Universitas Khayangan </h5>
-                                       </a>
+                                     <h5 class="text-white"><img alt="Logo" src="{{asset('img/k3.png')}}" class="h-40px logo" /> &nbsp; &nbsp;Universitas Khayangan </h5>
+                                    </a>
 								</div>
 								<div class="d-lg-block" id="kt_header_nav_wrapper">
 									<div class="d-lg-block p-5 p-lg-0" data-kt-drawer="true" data-kt-drawer-name="landing-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="200px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_landing_menu_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav_wrapper'}">
@@ -91,39 +93,38 @@
                                         <br>
                                         <br>
                                         @if($req_search != null)
-                                        <div v-for="st in pendaftar" v-if="search == st.no_reg ">
-                                            <div class="alert alert-success" role="alert" v-if="st.lulus == 1">
-                                                <h1><strong>Selamat! @{{ st.nama }}</strong></h1>
-                                                <p>Anda Dinyatakan Lulus Seleksi Masuk Perguruan Tinggi Universitas Khayangan</p>
+                                        <div v-for="st in student" v-if="search == st.no_exam ">
+                                            <div class="alert alert-success" role="alert" v-if="st.status == 1">
+                                                <strong>Selamat! @{{ st.name }}</strong>
+                                                <p>@{{ st.message }}</p>
                                                 <br>
                                                 <div class="text-start">
-                                                    <h5 class="text-dark"><b>NAMA</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : &nbsp; @{{ st.nama }}</h5>
+                                                    <h5 class="text-dark"><b>NAMA</b>&nbsp; &nbsp; &nbsp; &nbsp; :</h5>
                                                     <br>
-                                                    <h5 class="text-dark"><b>Program Studi</b> &nbsp; &nbsp; : &nbsp; @{{ st.jurusan.nama_jurusan }}</h5>
+                                                    <h5 class="text-dark"><b>KELAS</b>&nbsp; &nbsp; &nbsp; &nbsp; : </h5>
                                                     <br>
-                                                    <h5 class="text-dark"><b>STATUS</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : &nbsp; <span class="badge badge-success"> LULUS</span></h5>
+                                                    <h5 class="text-dark"><b>STATUS</b>&nbsp; &nbsp; &nbsp; : <span class="badge badge-success"> LULUS</span></h5>
                                                 </div>
-                                                <div class="1845093690text-center">
-                                                    <a :href="'/skl/'+ st.no_reg"><button class="btn btn-sm btn-primary">
+                                                <div class="text-center">
+                                                    <a :href="'/cetak/'+ st.id"><button class="btn btn-sm btn-primary">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-check-fill" viewBox="0 0 16 16">
                                                         <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm1.354 4.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
                                                     </svg>
                                                     CETAK SKL</button></a>
                                                 </div>
                                             </div>
-                                            <div class="alert alert-danger" role="alert" v-if="st.lulus == 0">
+                                            <div class="alert alert-danger" role="alert" v-if="st.status == 2">
 
-                                                <strong>Mohon Maaf @{{ st.nama }}</strong>
-                                                <p>Anda Tidak Lulus Seleksi Masuk Perguruan Tinggi Universitas Khayangan</p>
+                                                <strong>Mohon Maaf </strong>
+                                                <p></p>
                                                 <br>
                                                 <div class="text-start">
-                                                    <h5 class="text-dark"><b>NAMA</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : &nbsp; @{{ st.nama }}</h5>
+                                                    <h5 class="text-dark"><b>NAMA</b>&nbsp; &nbsp; &nbsp; &nbsp; :</h5>
                                                     <br>
-                                                    <h5 class="text-dark"><b>Program Studi</b> &nbsp; &nbsp; : &nbsp; @{{ st.jurusan.nama_jurusan }}</h5>
+                                                    <h5 class="text-dark"><b>KELAS</b>&nbsp; &nbsp; &nbsp; &nbsp; :</h5>
                                                     <br>
-                                                    <h5 class="text-dark"><b>STATUS</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : &nbsp; <span class="badge badge-danger">TIDAK LULUS</span></h5>
+                                                    <h5 class="text-dark"><b>STATUS</b>&nbsp; &nbsp; &nbsp; : <span class="badge badge-danger"> DITUNDA</span></h5>
                                                 </div>
-                                                <h3>Tetap Semangat dan Jangan Putus Asa</h3>
                                             </div>
                                         </div>
 
@@ -190,16 +191,16 @@
 		</div>
 
 		<!--begin::Global Javascript Bundle(used by all pages)-->
-		<script src="{{ asset('fix-theme/assets/plugins/global/plugins.bundle.js') }}"></script>
-		<script src="{{ asset('fix-theme/assets/js/scripts.bundle.js') }}"></script>
+		<script src="{{ asset('cek/fix-theme/assets/plugins/global/plugins.bundle.js') }}"></script>
+		<script src="{{ asset('cek/fix-theme/assets/js/scripts.bundle.js') }}"></script>
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Page Vendors Javascript(used by this page)-->
-		<script src="{{ asset('fix-theme/assets/plugins/custom/fslightbox/fslightbox.bundle.js') }}"></script>
-		<script src="{{ asset('fix-theme/assets/plugins/custom/typedjs/typedjs.bundle.js') }}"></script>
+		<script src="{{ asset('cek/fix-theme/assets/plugins/custom/fslightbox/fslightbox.bundle.js') }}"></script>
+		<script src="{{ asset('cek/fix-theme/assets/plugins/custom/typedjs/typedjs.bundle.js') }}"></script>
 		<!--end::Page Vendors Javascript-->
 		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="{{ asset('fix-theme/assets/js/custom/landing.js') }}"></script>
-		<script src="{{ asset('fix-theme/assets/js/custom/pages/pricing/general.js') }}"></script>
+		<script src="{{ asset('cek/fix-theme/assets/js/custom/landing.js') }}"></script>
+		<script src="{{ asset('cek/fix-theme/assets/js/custom/pages/pricing/general.js') }}"></script>
 
 	</body>
 </html>
@@ -213,7 +214,7 @@
         new Vue({
             el: '#app',
             data: {
-                pendaftar: JSON.parse(String.raw `{!! json_encode($pendaftar) !!}`),
+                student: JSON.parse(String.raw `{!! json_encode($student) !!}`),
                 setting: JSON.parse(String.raw `{!! json_encode($setting) !!}`),
                 search: '{{ $req_search }}',
                 dt: '{!! $setting->date !!} {!! $setting->time !!}',
@@ -223,7 +224,7 @@
             methods: {
                 submitSearch: function() {
                     // console.log(this.sort_by)
-                    window.location.href = `ceklulus?search=${this.search}`
+                    window.location.href = `/?search=${this.search}`
                 },
 
                 currentDate() {
@@ -266,8 +267,8 @@
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             // Output the result in an element with id="demo"
-            document.getElementById("demo").innerHTML = "<span class='badge badge-success'>HITUNG MUNDUR PENGUMUMAN</span> :  " + days + "Hari - " + hours + "Jam - " +
-                minutes + "Menit - " + seconds + "Detik ";
+            document.getElementById("demo").innerHTML = "<span class='badge badge-success'>HITUNG MUNDUR PENGUMUMAN</span> :  " + days + " Hari - " + hours + " Jam - " +
+                minutes + " Menit - " + seconds + " Detik ";
 
             // If the count down is over, write some text
             if (distance < 0) {
