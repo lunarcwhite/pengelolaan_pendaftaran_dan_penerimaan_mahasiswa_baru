@@ -1,4 +1,4 @@
-@if($student->status == 1)
+@if($pendaftar->lulus == 1)
 <style>
     @media print {
 
@@ -11,7 +11,6 @@
         body {
             height: auto;
             font-size: 10pt;
-            /* changing to 10pt has no impact */
         }
 
         @page {
@@ -40,14 +39,17 @@
 </table>
 <br>
 
-<body onload="window.print();">
-    <h4 align="center" style="margin-top:0px;"><u>{{ $school->nama_surat }}</u>
-        <p>Nomor: {{ $school->no_surat }}</p>
+<body>
+    {{-- <h4 align="center" style="margin-top:0px;"><u>{{ $school->nama_surat }}</u> --}}
+        <h4 align="center" style="margin-top:0px;"><u>Ini Nama Surat</u>
+        {{-- <p>Nomor: {{ $school->no_surat }}</p> --}}
+        <p>Nomor: Ini Nomor Surat</p>
     </h4>
 
 
     <br>
-    <p>{{ $school->pembuka_surat }}</p>
+    {{-- <p>{{ $school->pembuka_surat }}</p> --}}
+    <p>Ini Pembuka Surat</p>
     <br>
 
     <table width="100%" border="0">
@@ -55,37 +57,34 @@
         <tr>
             <td width="200">NO Regristrasi</td>
             <td width="1">:</td>
-            <td>{{ $pendaftars->no_reg }}</td>
+            <td>{{ $pendaftar->no_reg }}</td>
         </tr>
         <tr>
             <td>NAMA LENGKAP</td>
             <td>:</td>
-            <td>{{ $pendaftars->nama }}</td>
+            <td>{{ $pendaftar->nama }}</td>
         </tr>
 
         <tr>
             <td>Tempat, Tanggal lahir</td>
             <td>:</td>
-            <td>{{ $pendaftars->tempat_lahir }},{{ $pendaftars->tanggal_lahir }}</td>
+            <td>{{ $pendaftar->tempat_lahir }},&nbsp;{{ $pendaftar->tanggal_lahir }}</td>
         </tr>
         <tr>
             <td >Nama Orangtua</td>
             <td >:</td>
-            <td>{{ $pendaftars->nama_ibu }}</td>
+            <td>{{ $pendaftar->nama_ibu }}</td>
         </tr>
         
         <tr>
             <td >Asal Sekolah</td>
             <td >:</td>
-            <td>{{ $pendaftars->asal_sekolah }}</td>
-        </tr>
-        <tr>
-            <td><center>Tujuan</center></td>
+            <td>{{ $pendaftar->asal_sekolah }}</td>
         </tr>
         <tr>
             <td >Jurusan</td>
             <td >:</td>
-            <td>{{ $pendaftars->jurusan_kode }}</td>
+            <td>{{ $pendaftar->jurusan->nama_jurusan }}</td>
         </tr>
 
 
@@ -103,7 +102,7 @@
         </table>
     </center>
     <br>
-    <p>{{ $pendaftars->}}</p>
+    {{-- <p>{{ $pendaftar->}}</p> --}}
     {{-- tempat kalimat penutup --}}
     <br>
     <br>

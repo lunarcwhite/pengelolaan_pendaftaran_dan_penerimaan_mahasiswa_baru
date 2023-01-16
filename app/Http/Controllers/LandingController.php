@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pendaftar;
+use App\Models\Setting;
+use Carbon\Carbon;
+use PDF;
 
 class LandingController extends Controller
 {
@@ -15,8 +19,32 @@ class LandingController extends Controller
     {
         return view('landing.daftar');
     }
-    public function cek()
+    public function cek(Request $request)
     {
-        return view('ceklulus.cek');
+        $req_search = $request->query('search');
+        $pendaftar = Pendaftar::all();
+        $setting = Setting::first();
+        $dt = Carbon::now()->format('Y-m-d H:i:s');
+
+        if ($req_search != null) {
+            $pendaftar = Pendaftar::query()->where('no_reg', $req_search)->with('jurusan')->get();
+        }
+
+        return view('ceklulus.cek', [
+            'pendaftar' => $pendaftar,
+            'setting' => $setting,
+            'req_search' => $req_search,
+            'dt' => $dt,
+        ]);
     }
+    public function cetak($id)
+    {
+        $pendaftar = Pendaftar::find($id);
+        // $school = School::first();
+        $pdf = PDF::loadView('ceklulus.cetak', [
+            'pendaftar' => $pendaftar,
+        ]);
+        return $pdf->download('Surat Keterangan Lulus.pdf');
+    }
+    
 }

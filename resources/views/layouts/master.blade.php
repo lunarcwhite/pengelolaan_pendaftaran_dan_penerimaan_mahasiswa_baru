@@ -156,11 +156,10 @@
         })
         @endif
 
-        $("id*=table-form").DataTable();
-
         let baseurl = "<?= url('/') ?>";
         let fullURL = "<?= url()->full() ?>";
     </script>
+    @stack('js')
 </body>
 
 </html>

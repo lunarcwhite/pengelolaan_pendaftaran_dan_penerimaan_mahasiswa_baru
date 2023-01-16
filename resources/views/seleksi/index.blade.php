@@ -36,33 +36,23 @@
                         </div>
                     </div>
                     <hr />
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="overview-wrap">
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a href="{{ route('export.excel') }}" class="btn btn-success" target="_blank"><i
-                                            class="fa fa-file-excel"></i> Export</a>
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="{{ route('dashboard.pdf') }}" class="btn btn-danger" target="_blank"><i
-                                                class="fa fa-file-pdf"></i> Print Hasil</a>
-                                    </div>
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="{{ route('emails.Pemberitahuan') }}" class="btn btn-light"><i
-                                                class="fa fa-box"></i>
-                                            Kirim Email</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <hr />
                     <div class="table-responsive">
                         <form id="table-form" action="/admin/fungsi-seleksi" method="post">
                             @csrf
-                            <button type="submit" class="btn btn-info"><i class="fa fa-warehouse"></i> Jalankan Fungsi
+                            <button type="submit" class="btn btn-danger"><i class="fa fa-warehouse"></i> Jalankan Fungsi
                                 Seleksi Otomatis</button>
                             <hr />
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a href="{{ route('export.excel') }}" class="btn btn-success" target="_blank"><i
+                                        class="fa fa-file-excel"></i> Export</a>
+                                    <a href="{{ route('dashboard.pdf') }}" class="btn btn-danger" target="_blank"><i
+                                            class="fa fa-file-pdf"></i> Print Hasil</a>
+                                    <a href="{{ route('emails.Pemberitahuan') }}" class="btn btn-light"><i
+                                            class="fa fa-box"></i>
+                                        Kirim Email Kelulusan</a>
+                                </div>
+                                <hr />
+                            </div>
                             <table class="table table-hover bg-white" id="myTable">
                                 <thead>
                                     <th>No Registrasi</th>
