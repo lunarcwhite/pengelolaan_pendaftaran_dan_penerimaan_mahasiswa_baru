@@ -30,8 +30,8 @@ class PemberitahuanEmail extends Mailable
     public function build()
     {
 
-        return $this->from('admin@mail.com', 'Admin')
-            ->subject('Pemberitahuan Test')
+        return $this->from('adminpmb@khayangan.ac.id', 'Admin')
+            ->subject('Pemberitahuan Kelulusan')
             ->markdown('emails.Pemberitahuan')
             ->with('details', $this->details);
     }

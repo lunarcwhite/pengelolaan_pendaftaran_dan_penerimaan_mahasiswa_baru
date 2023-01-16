@@ -49,7 +49,7 @@
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <a href="{{ route('emails.Pemberitahuan') }}" class="btn btn-light"><i
                                                 class="fa fa-box"></i>
-                                            Kirim Email</a>
+                                            Kirim Email Kelulusan</a>
                                     </div>
                                 </div>
 

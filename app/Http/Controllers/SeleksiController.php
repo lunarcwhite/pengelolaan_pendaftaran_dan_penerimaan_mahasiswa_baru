@@ -87,17 +87,17 @@ class SeleksiController extends Controller
 
     public function email()
     {
-        $emails = User::pluck('email');
-        $emails->all();
-        $details = [
-            'title' => 'Pengumuman',
-            'body' => 'Peserta harap cek bawah hasil peserta Test',
-            'url' => asset('Hasil_Seleksi.pdf')
-        ];
-
-        Mail::to($emails)->queue(new PemberitahuanEmail($details));
+        $emails = Pendaftar::pluck('email_daftar');
+        foreach($emails as $email){
+            $details = [
+                'title' => 'Pengumuman',
+                'body' => 'Informasi Kelulusan Sudah Bisa Dicek Pada Link DI Bawah',
+                'url' => route('cekLulus')
+            ];
+            Mail::to($email)->queue(new PemberitahuanEmail($details));
+        }
         $notification = [
-            'message' => 'Email Terkirim Sukses',
+            'message' => 'Email Sukses Dikirim',
             'alert-type' => 'success'
         ];
         return redirect()->back()->with($notification);

@@ -24,7 +24,7 @@ use App\Http\Controllers\SeleksiController;
 Route::get('/', [LandingController::class, 'index']);
 
 Route::get('/pendaftaran', [LandingController::class, 'daftar']);
-Route::get('/ceklulus', [LandingController::class, 'cek']);
+Route::get('/ceklulus', [LandingController::class, 'cek'])->name('cekLulus');
 
 Route::controller(LoginController::class)->group(function () {
     Route::get('/login', 'login')->name('login')->middleware('guest');
