@@ -22,7 +22,6 @@
                             <th>No Registrasi</th>
                             <th>Nama Pendaftar</th>
                             <th>Total Score</th>
-                            <th>Aksi</th>
                         </thead>
                         <tbody>
                             @forelse($pendaftar as $value => $item)
@@ -44,9 +43,6 @@
                                         $total_nilai = $total_mtk + $total_indonesia + $total_inggris + $ujian;
                                     @endphp
                                     <td>{{$total_nilai}}</td>
-                                    <td>
-                                        <button type="button" class="btn btn-info success">Aksi</button>
-                                    </td>
                                 </tr>
                             @empty
                                 <h1>Belum Ada Pendaftar Di Jurusan Ini</h1>

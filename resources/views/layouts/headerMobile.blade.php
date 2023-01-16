@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="header-mobile-inner">
                 <a class="logo" href="index.html">
-                    <img src="images/icon/logo.png" alt="CoolAdmin" />
+                    <img src="{{asset('images/icon/logo.png')}}" alt="CoolAdmin" />
                 </a>
                 <button class="hamburger hamburger--slider" type="button">
                     <span class="hamburger-box">
@@ -32,6 +32,10 @@
                     <li>
                         <a class="js-arrow" href="/dashboard/seleksi">
                             <i class="fas fa-tachometer-alt"></i>Seleksi</a>
+                        </li>
+                    <li>
+                        <a class="js-arrow" href="{{route('admin.setting')}}">
+                            <i class="fas fa-tachometer-alt"></i>Setting</a>
                     </li>
                 @endcan
             </ul>

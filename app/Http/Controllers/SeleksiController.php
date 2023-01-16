@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pendaftar;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Exports\PendaftarExport;
+use App\Exports\lulusExport;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -13,6 +13,7 @@ use App\Mail\EmailNotification;
 use App\Mail\PemberitahuanEmail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use App\Mail\EmailPengingat;
 
 class SeleksiController extends Controller
 {
@@ -71,7 +72,7 @@ class SeleksiController extends Controller
     }
     public function export()
     {
-        return Excel::download(new PendaftarExport, 'pendaftar_yang_lulus.xlsx');
+        return Excel::download(new lulusExport, 'pendaftar_yang_lulus.xlsx');
     }
     public function print_pdf()
     {
@@ -86,17 +87,53 @@ class SeleksiController extends Controller
 
     public function email()
     {
-        $emails = User::pluck('email');
-        $emails->all();
-        $details = [
-            'title' => 'Pengumuman',
-            'body' => 'Peserta harap cek bawah hasil peserta Test',
-            'url' => asset('Hasil_Seleksi.pdf')
-        ];
-
-        Mail::to($emails)->queue(new PemberitahuanEmail($details));
+        $emails = Pendaftar::pluck('email_daftar');
+        foreach($emails as $email){
+            $details = [
+                'title' => 'Pengumuman',
+                'body' => 'Informasi Kelulusan Sudah Bisa Dicek Pada Link DI Bawah',
+                'url' => route('cekLulus')
+            ];
+            Mail::to($email)->queue(new PemberitahuanEmail($details));
+        }
         $notification = [
-            'message' => 'Email Terkirim Sukses',
+            'message' => 'Email Sukses Dikirim',
+            'alert-type' => 'success'
+        ];
+        return redirect()->back()->with($notification);
+    }
+    public function emailPengingat()
+    {
+        $emails = User::pluck('email');
+        foreach($emails as $email){
+            Mail::to($email)->queue(new EmailPengingat());
+        }
+        $notification = [
+            'message' => 'Email Pengingat Berhasil Dikirim',
+            'alert-type' => 'success'
+        ];
+        return redirect()->back()->with($notification);
+    }
+    public function nonaktif(Request $request)
+    {
+        $pendaftar = Pendaftar::pluck('can_update')->all();
+        foreach ($pendaftar as $p) {
+
+            if ($p != true) {
+                $datasave = [
+                    'can_update' => true,
+                ];
+                DB::table('pendaftars')->update($datasave);
+            } else {
+                $datasave = [
+                    'can_update' => false,
+                ];
+                DB::table('pendaftars')->update($datasave);
+            }
+        }
+
+        $notification = [
+            'message' => 'Berhasil',
             'alert-type' => 'success'
         ];
         return redirect()->back()->with($notification);

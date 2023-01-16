@@ -10,7 +10,9 @@
                     </div>
                 </div>
             </div>
-            <br/>     
+            <hr/>
+            <a href="{{url()->previous()}}" class="btn btn-primary mb-2">Kembali</a>
+            <hr/>     
             @include('layouts.formLayout')
             <hr/>         
         </div>

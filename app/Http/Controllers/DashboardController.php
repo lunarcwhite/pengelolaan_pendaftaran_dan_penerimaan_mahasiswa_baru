@@ -220,32 +220,8 @@ class DashboardController extends Controller
     {
         $pendaftar = Pendaftar::find($id)->first();
         $jurusan = Jurusan::all();
-        $pilihanJurusan = Jurusan::where('id', $pendaftar->jurusan_id)->first();
+        $pilihanJurusan = Jurusan::where('kode_jurusan', $pendaftar->jurusan_kode)->first();
         return view('dashboard.showPendaftar', compact('pendaftar', 'pilihanJurusan', 'jurusan'));
     }
 
-    public function nonaktif(Request $request)
-    {
-        $pendaftar = Pendaftar::pluck('can_update')->all();
-        foreach ($pendaftar as $p) {
-
-            if ($p != true) {
-                $datasave = [
-                    'can_update' => true,
-                ];
-                DB::table('pendaftars')->update($datasave);
-            } else {
-                $datasave = [
-                    'can_update' => false,
-                ];
-                DB::table('pendaftars')->update($datasave);
-            }
-        }
-
-        $notification = [
-            'message' => 'Berhasil',
-            'alert-type' => 'success'
-        ];
-        return redirect()->back()->with($notification);
-    }
 }

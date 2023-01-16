@@ -36,7 +36,7 @@
 
     <!-- Main CSS-->
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet" media="all">
-
+    <link rel="icon" href="{{asset('img/k3.png')}}" type="image/gif" sizes="16x16">
 </head>
 
 <body class="animsition">
@@ -98,72 +98,68 @@
         const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
-            time: 3000,
             showConfirmButton: false,
-
+            timer: 3000,
         })
-        @if (Session::has('message'))
-            var type = "{{ Session::get('alert-type') }}"
-            switch (type) {
-                case 'info':
-                    Toast.fire({
-                        type: 'info',
-                        title: "{{ Session::get('message') }}"
-                    })
-                    break;
-
+        @if(Session::has('message'))
+        var type = "{{Session::get('alert-type')}}";
+        switch (type) {
+            case 'info':
+                Toast.fire({
+                    type: 'info',
+                    title: "{{Session::get('message')}}"
+                })
+                break;
                 case 'success':
                     Toast.fire({
-                        type: 'success',
-                        title: "{{ Session::get('message') }}"
-                    })
-                    break;
-
-                case 'warning':
-                    toast.fire({
-                        type: 'warning',
-                        title: "{{ Session::get('message') }}"
-                    })
-                    break;
-
-                case 'error':
-                    toast.fire({
-                        type: 'error',
-
-                        title: "{{ Session::get('message') }}"
-                    })
-                    break;
-
-                case 'dialog_error':
-                    Toast.fire({
-                        type: 'error',
-                        title: 'Oppss',
-                        showCloseButton: true,
-                        text: "Terjadi Kesalahan",
-
-                    })
-                    break;
-
-            }
-        @endif
-
-        @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                Swal.fire({
-                    type: 'error',
-                    title: "Oppss",
-                    icon: 'error',
-                    text: "{{ $error }}",
-
+                    type: 'success',
+                    title: "{{Session::get('message')}}"
                 })
-            @endforeach
+                break;
+                case 'warning':
+                    Toast.fire({
+                    type: 'warning',
+                    title: "{{Session::get('message')}}"
+                })
+                break;  
+                case 'error':
+                    Toast.fire({
+                    type: 'error',
+                    title: "{{Session::get('message')}}"
+                })
+                break;
+                case 'dialog_error':
+                    Swal.fire({
+                    type: 'error',
+                    title: "Oppssss",
+                    text: "{{Session::get('message')}}",
+                    timer:3000
+                })
+                break;
+        }
         @endif
-
-        $("id*=table-form").DataTable();
+        @if ($errors->any())
+        @foreach($errors->all() as $error)
+        Swal.fire({
+            type: 'error',
+            title: "Oppsss",
+            text: "{{ $error }}",
+        });
+        @endforeach
+        @endif
+         
+        @if ($errors->any())
+        Swal.fire({
+            icon: 'error',
+            title: "Oppsss",
+            text: "Terjadi suatu kesalahan",
+        })
+        @endif
 
         let baseurl = "<?= url('/') ?>";
         let fullURL = "<?= url()->full() ?>";
     </script>
+    @stack('js')
 </body>
 
 </html>

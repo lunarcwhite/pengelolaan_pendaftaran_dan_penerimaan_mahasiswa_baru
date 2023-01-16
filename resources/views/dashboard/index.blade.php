@@ -28,14 +28,14 @@
                                 <thead>
                                     <th>No Registrasi</th>
                                     <th>Nama</th>
-                                    <th>Nilai Ujian</th>
+                                    {{-- <th>Nilai Ujian</th> --}}
                                     <th>Aksi</th>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>{{ $pendaftar->no_reg }}</td>
                                         <td>{{ $pendaftar->nama }}</td>
-                                        <td>{{ $pendaftar->nilai_ujian }}</td>
+                                        {{-- <td>{{ $pendaftar->nilai_ujian }}</td> --}}
                                         @if ($pendaftar->can_update == true)
                                             <td>
                                                 <button type="button" id="btn-edit-registrasi" class="btn btn-warning sm"
