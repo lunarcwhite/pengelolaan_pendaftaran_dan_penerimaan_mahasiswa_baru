@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pendaftar;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Exports\PendaftarExport;
+use App\Exports\lulusExport;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -72,7 +72,7 @@ class SeleksiController extends Controller
     }
     public function export()
     {
-        return Excel::download(new PendaftarExport, 'pendaftar_yang_lulus.xlsx');
+        return Excel::download(new lulusExport, 'pendaftar_yang_lulus.xlsx');
     }
     public function print_pdf()
     {
