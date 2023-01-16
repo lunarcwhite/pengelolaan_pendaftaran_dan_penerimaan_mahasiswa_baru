@@ -224,28 +224,4 @@ class DashboardController extends Controller
         return view('dashboard.showPendaftar', compact('pendaftar', 'pilihanJurusan', 'jurusan'));
     }
 
-    public function nonaktif(Request $request)
-    {
-        $pendaftar = Pendaftar::pluck('can_update')->all();
-        foreach ($pendaftar as $p) {
-
-            if ($p != true) {
-                $datasave = [
-                    'can_update' => true,
-                ];
-                DB::table('pendaftars')->update($datasave);
-            } else {
-                $datasave = [
-                    'can_update' => false,
-                ];
-                DB::table('pendaftars')->update($datasave);
-            }
-        }
-
-        $notification = [
-            'message' => 'Berhasil',
-            'alert-type' => 'success'
-        ];
-        return redirect()->back()->with($notification);
-    }
 }

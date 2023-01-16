@@ -32,6 +32,10 @@
                     <li>
                         <a class="js-arrow" href="/dashboard/seleksi">
                             <i class="fas fa-tachometer-alt"></i>Seleksi</a>
+                        </li>
+                    <li>
+                        <a class="js-arrow" href="{{route('admin.setting')}}">
+                            <i class="fas fa-tachometer-alt"></i>Setting</a>
                     </li>
                 @endcan
             </ul>
