@@ -27,12 +27,11 @@ class SettingController extends Controller
     {
         $setting = Setting::find($id);
         // return $setting;
-        return view('admin.setting.edit', [
-            'setting' => $setting,
-        ]);
+        return response()->json($setting);
     }
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
+        $id = $request->id;
         DB::beginTransaction();
 
         try {
@@ -41,18 +40,15 @@ class SettingController extends Controller
             $setting->time = $request->time;
             $setting->status = $request->status;
 
-
-            $setting->created_at = $request->created_at;
-            $setting->updated_at = $request->updated_at;
-
             $setting->save();
 
             DB::commit();
-            return response()->json([
-                'message' => 'Data has been saved',
-                'code' => 200,
-                'error' => false,
-            ]);
+            $notification = array(
+                'message' => 'Settingan Waktu Cek Kelulusan Berhasil Diubah',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notification);
+
         } catch (Exception $e) {
             DB::rollback();
             return response()->json([

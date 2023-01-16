@@ -81,7 +81,8 @@ Route::middleware(['admin','auth'])->group(function () {
 Route::middleware(['admin','auth'])->group(function () {
     Route::controller(SettingController::class)->group(function () {
         Route::get('/dashboard/setting', 'index')->name('admin.setting');
-        Route::put('/dashboard/setting/update', 'update')->name('admin.setting.update');
+        Route::get('/dashboard/setting/{id}', 'edit')->name('admin.setting.edit');
+        Route::patch('/dashboard/setting/update', 'update')->name('admin.setting.update');
     });
 });
 
