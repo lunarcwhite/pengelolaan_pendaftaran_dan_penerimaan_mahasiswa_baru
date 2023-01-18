@@ -52,7 +52,7 @@
                     <div id="app" v-cloak>
 					<div class="d-flex flex-column flex-center w-100 min-h-350px min-h-lg-500px px-9">
                         <!--begin::Alert-->
-                            <div class="alert alert-dismissible bg-light-warning border border-primary d-flex flex-column flex-sm-row p-5 mb-10">
+                            <div class="alert alert-dismissible bg-light-warning border border-primary d-flex flex-column flex-sm-row p-5 mb-2">
 
                                 <div class="d-flex flex-column pe-0 pe-sm-10">
                                     <!--begin::Title-->
@@ -103,6 +103,8 @@
                                                     <br>
                                                     <h5 class="text-dark"><b>STATUS</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : &nbsp; <span class="badge badge-success"> LULUS</span></h5>
                                                 </div>
+                                                <br>
+        
                                                 <div class="1845093690text-center">
                                                     <a :href="'/skl/'+ st.no_reg"><button class="btn btn-sm btn-primary">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-check-fill" viewBox="0 0 16 16">
@@ -126,8 +128,6 @@
                                                 <h3>Tetap Semangat dan Jangan Putus Asa</h3>
                                             </div>
                                         </div>
-
-                                        @else
 
                                         @endif
                                         </div>
