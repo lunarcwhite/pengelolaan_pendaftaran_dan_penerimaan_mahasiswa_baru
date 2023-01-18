@@ -139,7 +139,7 @@
                             <div id="kick-start" class="card text-center bg-warning">
                                 <div class="card-header">
                                     <h4 class="card-title text-white">PENGUMUMAN KELULUSAN BELUM DI BUKA</h4>
-                                    <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                                    <a class="heading-elements-toggle"></a>
 
                                 </div>
                             </div>
