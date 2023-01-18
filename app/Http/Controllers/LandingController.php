@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pendaftar;
 use App\Models\Setting;
+use App\Models\Kampus;
 use Carbon\Carbon;
 use PDF;
 
@@ -40,10 +41,13 @@ class LandingController extends Controller
     public function cetak($id)
     {
         $pendaftar = Pendaftar::find($id);
-        // $school = School::first();
-        $pdf = PDF::loadView('ceklulus.cetak', [
-            'pendaftar' => $pendaftar,
-        ]);
+        $kampuses = Kampus::where('id', 1)->first();
+        // return view('ceklulus.cetak', compact('pendaftar', 'kampuses'));
+        $pdf = PDF::loadView('ceklulus.cetak', compact('pendaftar', 'kampuses'));
+        // , [
+        //     'pendaftar' => $pendaftar,
+        //     'kampuses' => $kampuses
+        // ]);
         return $pdf->download('Surat Keterangan Lulus.pdf');
     }
     
