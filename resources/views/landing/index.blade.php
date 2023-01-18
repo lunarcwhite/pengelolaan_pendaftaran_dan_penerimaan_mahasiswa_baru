@@ -68,6 +68,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#footer">Kontak</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ceklulus">Cek Kelulusan</a>
+                    </li>
                 </ul>
                 <a href="/pendaftaran" class="btn btn-brand ms-lg-3">Pendaftaran <span
                         class="badge text-bg-info">Online</span></a>

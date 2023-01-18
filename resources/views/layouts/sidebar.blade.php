@@ -1,7 +1,7 @@
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
         <a href="#">
-            <img src="{{ asset('images/icon/dsk.png') }}" alt="Cool Admin" />
+            <img src="{{ asset('images/icon/dsk.png') }}" alt="khayangan" />
         </a>
     </div>
     <div class="menu-sidebar__content js-scrollbar1">
@@ -14,19 +14,20 @@
                 @can('admin')
                     <li>
                         <a class="js-arrow" href="/dashboard/fakultas">
-                            <i class="fas fa-tachometer-alt"></i>Fakultas</a>
+                            <i class="fas fa-university"></i>Fakultas</a>
+                            
                     </li>
                     <li>
                         <a class="js-arrow" href="/dashboard/soal">
-                            <i class="fas fa-tachometer-alt"></i>Soal Ujian</a>
+                            <i class="fas fa-file-alt"></i>Soal Ujian</a>
                     </li>
                     <li>
                         <a class="js-arrow" href="/dashboard/seleksi">
-                            <i class="fas fa-tachometer-alt"></i>Seleksi</a>
+                            <i class="fas fa-check-circle"></i>Seleksi</a>
                     </li>
                     <li>
                         <a class="js-arrow" href="{{route('admin.setting')}}">
-                            <i class="fas fa-tachometer-alt"></i>Setting</a>
+                            <i class="fas fa-cogs"></i>Setting</a>
                     </li>
                 @endcan
             </ul>
