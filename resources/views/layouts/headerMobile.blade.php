@@ -27,16 +27,16 @@
                         
                 </li>
                 <li>
+                    <a class="js-arrow" href="{{route('admin.setting')}}">
+                        <i class="fas fa-cogs"></i>Setting</a>
+                </li>
+                <li>
                     <a class="js-arrow" href="/dashboard/soal">
                         <i class="fas fa-file-alt"></i>Soal Ujian</a>
                 </li>
                 <li>
                     <a class="js-arrow" href="/dashboard/seleksi">
                         <i class="fas fa-check-circle"></i>Seleksi</a>
-                </li>
-                <li>
-                    <a class="js-arrow" href="{{route('admin.setting')}}">
-                        <i class="fas fa-cogs"></i>Setting</a>
                 </li>
                 @endcan
             </ul>

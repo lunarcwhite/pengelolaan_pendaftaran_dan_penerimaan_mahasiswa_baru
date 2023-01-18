@@ -35,8 +35,8 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script type="text/javascript">
             $(document).ready(function() {
-              var detik = 20; // Jumlah Detik Waktu Hitung Mundur
-              var menit = 0; // Jumlah Menit Waktu Hitung Mundur
+              var detik = 0; // Jumlah Detik Waktu Hitung Mundur
+              var menit = '{{$waktu->menit}}' / 60; // Jumlah Menit Waktu Hitung Mundur
               function hitung() {
                 setTimeout(hitung,1000);
                 $('#demo').html( ' Sisa Waktu ' + menit + ' menit ' + detik + ' detik lagi.');
@@ -54,6 +54,12 @@
             hitung();
             });
         </script>
+        <script type="text/javascript"> 
+        history.pushState(null, null, location.href); 
+        window.onpopstate = function () { 
+          history.go(1);
+
+        }; </script>
 
 </body>
 

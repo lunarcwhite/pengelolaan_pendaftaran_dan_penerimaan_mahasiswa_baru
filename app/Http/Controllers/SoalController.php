@@ -6,6 +6,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\SoalImport;
 use App\Models\Pendaftar;
 use App\Models\Soal;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -35,8 +36,9 @@ class SoalController extends Controller
     {
         $id = Crypt::decryptString($id);
         $pendaftar = Pendaftar::find($id)->first();
+        $waktu = Setting::where('id', 2)->first();
         $soal = Soal::inRandomOrder()->get();
-        return view('soal.show', compact('pendaftar', 'soal'));
+        return view('soal.show', compact('pendaftar', 'soal', 'waktu'));
     }
     public function submit(Request $request)
     {

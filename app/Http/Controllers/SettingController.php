@@ -17,10 +17,12 @@ class SettingController extends Controller
      */
     public function index()
     {
-        $setting = Setting::first();
+        $setting = Setting::where('id', 1)->first();
+        $waktu = Setting::where('id', 2)->first();
         // return $setting;
         return view('setting.index', [
             'setting' => $setting,
+            'waktu' => $waktu
         ]);
     }
     public function edit($id)
@@ -58,5 +60,20 @@ class SettingController extends Controller
                 'errors' => $e . '',
             ], 500);
         }
+    }
+
+    public function waktu_ujian(Request $request)
+    {
+        $id = $request->id;
+            DB::table('settings')->where('id', $id)->update([
+                'menit' => $request->waktu * 60
+            ]);
+
+            $notification = array(
+                'message' => 'Settingan Waktu Ujian Berhasil Diubah',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notification);
+
     }
 }

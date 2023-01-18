@@ -272,7 +272,7 @@
             // If the count down is over, write some text
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("demo").innerHTML = "PENGUMUMAN SUDAH DIBUKA";
+                document.getElementById("demo").innerHTML = "PENGUMUMAN";
             }
         }, 1000);
     </script>
