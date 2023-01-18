@@ -1,6 +1,6 @@
 <h1>Tugas Besar Mata Kuliah Pemrograman Web Lanjut</h1>
 <h3>Kelompok E</h3>
-<strong>Studi Kasus di Kampus tentang pengelolaan pendaftaran dan penerimaan mahasiswa baru</strong>\
+<strong>Studi Kasus di Kampus tentang pengelolaan pendaftaran dan penerimaan mahasiswa baru</strong>
 <hr/>
 Anggota :
 <li> Dendi Pratama Putra Pamungkas (5520120122)</li>
@@ -8,18 +8,24 @@ Anggota :
 <li> Muhamad Rizky Maulana S</li>
 
 Langkah Instalasi
+<hr/>
 git clone https://github.com/lunarcwhite/pengelolaan_pendaftaran_dan_penerimaan_mahasiswa_baru
+<br/>
 cd pengelolaan_pendaftaran_dan_penerimaan_mahasiswa_baru
+<br/>
 composer install atau composer update
+<br/>
 npm install
+<br/>
 cp .env.example .env
+<br/>
 php artisan key:generate
-
+<br/>
 Atur database
-
+<br/>
 php artisan migrate
 
-Urutan Seeder
+<strong>Urutan Seeder</strong>
 1. php artisan db:seed FakultasSeeder
 2. php artisan db:seed JurusansSeeder
 3. php artisan db:seed GelombangsSeeder
