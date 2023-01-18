@@ -14,6 +14,7 @@ class SettingSeeder extends Seeder
     public function run()
     {
         DB::table('settings')->insert([
+            'id' => 1,
             'status' => 0,
             'date' => date("Y-m-d"),
             'time' => \Carbon\Carbon::now()

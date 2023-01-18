@@ -41,15 +41,21 @@ class SoalController extends Controller
     public function submit(Request $request)
     {
         $jawaban = $request->jawaban;
-        $soal = $request->no;
         $id = Auth::user()->id;
+        if($jawaban == null){
+            DB::table('pendaftars')->where('user_id', $id)->update(['nilai_ujian' => 0]);
+        return redirect('/dashboard');
+        }
+        $soal = $request->no;
         $z = null;
         foreach ($jawaban as $value => $item) {
             $db = DB::table('soals')->where('jawaban_benar', '=', $item)
                 ->where('id', $soal[$value])
                 ->exists();
+            $nilai = DB::table('soals')->where('jawaban_benar', '=', $item)
+                ->where('id', $soal[$value])->first();
             if ($db == true) {
-                $z += 20;
+                $z += $nilai->bobot_nilai;
             } else {
                 $z += 0;
             }
@@ -63,4 +69,5 @@ class SoalController extends Controller
 
         return redirect()->back();
     }
+
 }

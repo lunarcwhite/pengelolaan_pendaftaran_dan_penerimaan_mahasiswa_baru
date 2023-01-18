@@ -24,14 +24,14 @@
                     <hr />
                 @endif
                 <div class="overview-wrap">
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" data-toggle="modal" data-target="#importNilaiModal"
+                        {{-- <button type="button" data-toggle="modal" data-target="#importNilaiModal"
                             class="btn btn-secondary"><i class="fa fa-file-excel"></i> Import Nilai Ujian Dari File
-                            Excel</button>
+                            Excel</button> --}}
                         <button type="button" data-toggle="modal" data-target="#importSoalModal"
                             class="btn btn-primary"><i class="fa fa-file-excel"></i> Import Soal Dari File
                             Excel</button>
-                    </div>
+                            <a href="/files/soal.xlsx" target="_blank" class="btn btn-secondary"><i class="fa fa-file-excel"></i> Download template soal</a>
+                    
                 </div>
                 <hr />
                 <div class="table-responsive">

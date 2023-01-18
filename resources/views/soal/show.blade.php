@@ -21,6 +21,7 @@
 
 <body>
     <div class="container p-3 my-3 border">
+        <p class="float-right" id="demo"></p>
         <h1>Soal</h1>
         <form id="form" method="post" action="{{ route('soal.submit') }}">
             @csrf
@@ -30,6 +31,30 @@
             <button type="reset" class="btn btn-danger">Reset</button>
         </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+              var detik = 20; // Jumlah Detik Waktu Hitung Mundur
+              var menit = 0; // Jumlah Menit Waktu Hitung Mundur
+              function hitung() {
+                setTimeout(hitung,1000);
+                $('#demo').html( ' Sisa Waktu ' + menit + ' menit ' + detik + ' detik lagi.');
+                detik --;
+                if(detik < 0) {
+                  detik = 59;
+                  menit --;
+                  if(menit < 0) {
+                    menit = 0;
+                    detik = 0;
+                    document.getElementById('form').submit();
+                  }
+                }
+              }
+            hitung();
+            });
+        </script>
+
 </body>
 
 </html>
