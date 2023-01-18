@@ -1,4 +1,5 @@
 @if($pendaftar->lulus == 1)
+<html>
 <style>
     @media print {
 
@@ -33,7 +34,9 @@
         }
     }
 </style>
-
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
 <table border="0" width="100%">
     <tr>
         <td align="center">
@@ -43,9 +46,9 @@
             <b style="font-size:28px; text-transform: uppercase;">{{ $kampuses->kop_nama_kampus }}</b> <br>
             <b style="font-size:19px; text-transform: uppercase;">TAHUN PELAJARAN {{ $kampuses->kop_th_pelajaran }}</b>
         </td>
-        {{-- <td align="center">
-            <img src="{{asset('img/k3.png')}}" alt="logo2" width="70">
-        </td> --}}
+        <td align="center">
+            <img src="img/k.png" alt="logo2" width="70">
+        </td>
     </tr>
     <tr>
         <td colspan="3" align="center" style="font-size:15px;">
@@ -155,6 +158,7 @@
 
 
 </body>
+</html>
 @else
 ANDA TIDAK BISA CETAK KARTU
 @endif
