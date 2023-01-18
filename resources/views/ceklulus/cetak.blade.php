@@ -121,8 +121,6 @@
     <div class="text-align-center" >
         Yang Bersangkutan dinyatakan :
         <br>
-        <div class="row">
-           <div class="col m-12">
             <center>
                 <table style="border: 1px solid black;">
         
@@ -132,9 +130,6 @@
         
                 </table>
             </center>
-           </div>
-           
-        </div>
     </div>
     
     <br>
