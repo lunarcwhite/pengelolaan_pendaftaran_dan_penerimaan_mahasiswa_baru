@@ -24,14 +24,14 @@
                     <hr />
                 @endif
                 <div class="overview-wrap">
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" data-toggle="modal" data-target="#importNilaiModal"
+                        {{-- <button type="button" data-toggle="modal" data-target="#importNilaiModal"
                             class="btn btn-secondary"><i class="fa fa-file-excel"></i> Import Nilai Ujian Dari File
-                            Excel</button>
+                            Excel</button> --}}
                         <button type="button" data-toggle="modal" data-target="#importSoalModal"
                             class="btn btn-primary"><i class="fa fa-file-excel"></i> Import Soal Dari File
                             Excel</button>
-                    </div>
+                            <a href="/files/soal.xlsx" target="_blank" class="btn btn-secondary"><i class="fa fa-file-excel"></i> Download template soal</a>
+                    
                 </div>
                 <hr />
                 <div class="table-responsive">
@@ -44,7 +44,11 @@
                             <tr>
                                 <td>Soal Ujian</td>
                                 <td>
-                                    <a href="/dashboard/soal/tinjau" class="btn btn-primary">Tinjau</a>
+                                    <form action="{{route('hapus.soal')}}" method="post" id="form-hapus-soal">
+                                        @csrf
+                                        <a href="/dashboard/soal/tinjau" class="btn btn-sm btn-primary">Tinjau</a>
+                                        <button type="button" class="btn-hapus btn btn-sm btn-danger">Hapus</button>
+                                    </form>
                                 </td>
                             </tr>
                         </tbody>
@@ -63,4 +67,27 @@
     @include('dashboard.modalImportNilai')
     @include('dashboard.modalImportSoal')
 @endcan
-@endsection
+@stop
+@push('js')
+<script>
+    $(function(){
+      $(document).on("click", ".btn-hapus", function (e) {
+              e.preventDefault();
+              Swal.fire({
+              icon: 'warning',
+              html: 'Anda Akan Menghapus Data<br><strong>Soal Ujian</strong> ?',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Ya, hapus!',
+              cancelButtonText: 'Batal'
+          }).then((result) => {
+                if (result.isConfirmed) {
+                    $("#form-hapus-soal").submit();
+                }
+            });
+
+          });
+        });
+  </script>
+@endpush

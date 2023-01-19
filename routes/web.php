@@ -70,6 +70,7 @@ Route::controller(SoalController::class)->group(function () {
     Route::get('/dashboard/soal/{no_reg}', 'show')->middleware(['pendaftar', 'soal', 'revalidate']);
     Route::post('/dashboard/soal', 'submit')->name('soal.submit')->middleware('pendaftar');
     Route::post('/admin/nilai/import', 'importNilai')->middleware(['admin','auth']);
+    Route::post('/admin/hapus/soal', 'hapusSoal')->name('hapus.soal')->middleware(['admin','auth']);
 });
 
 Route::middleware(['admin','auth'])->group(function () {
@@ -84,6 +85,7 @@ Route::middleware(['admin','auth'])->group(function () {
         Route::get('/dashboard/setting', 'index')->name('admin.setting');
         Route::get('/dashboard/setting/{id}', 'edit')->name('admin.setting.edit');
         Route::patch('/dashboard/setting/update', 'update')->name('admin.setting.update');
+        Route::patch('/admin/waktu_ujian/setting', 'waktu_ujian')->name('waktu_ujian');
     });
 });
 
