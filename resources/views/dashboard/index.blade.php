@@ -102,6 +102,7 @@
         </div>
                 </div>
             </div> --}}
+        @if($pendaftar == true)
             @push('js')
 <script>
     $(function(){
@@ -126,6 +127,7 @@
         });
   </script>
 @endpush
+@endif
     @endcan
 
     @can('admin')
@@ -176,9 +178,10 @@
                                         <td>
                                             @if($item->lulus == 1)
                                                 <button class="btn btn-success">Lulus</button>
-                                            @endif
-                                            @if($item->lulus == 0)
+                                            @elseif($item->lulus == 0)
                                                 <button class="btn btn-danger">Tidak</button>
+                                            @elseif($item->lulus == 2)
+                                                <button class="btn btn-warning btn-sm">Belum diseleksi</button>
                                             @endif
                                         </td>
                                         <td>

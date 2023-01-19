@@ -59,7 +59,7 @@
  {{-- MAIN CONTENT --}}
     <main role="main" class="container">
         <h1 class="mt-5"><h1>TATA CARA PENDAFTARAN PESERTA MAHASISWA BARU TAHUN 2023-2024</h1></h1>
-        <p class="lead">Proses pendaftaran Universitas Indonesia terdiri dari 9 tahap</p>
+        <p class="lead">Proses pendaftaran Universitas Khayangan terdiri dari 9 tahap</p>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
@@ -81,7 +81,7 @@
                                 <p class="small">Verifikasi dilakukan untuk memastikan Anda telah mengecek bahwa isian formulir pendaftaran dan pilihan program studi Anda telah
                                     terisi dengan data yang benar serta telah mengetahui biaya pendidikan untuk program studi yang dipilih</p>
                                     <li>Meng-<em>upload</em> <strong>berkas persyaratan</strong> pendaftaran
-                                        <p class="small">Khusus untuk pendaftar Program Pascasarjana (S2, S3), Profesi, Spesialis, S1 Ekstensi dan yang memilih S1 Kelas Internasional</p></li>
+                                        <p class="small">Khusus untuk pendaftar Program Pascasarjana (S2, S3),segera</p></li>
                                         <li>Membayar <strong>biaya pendaftaran</strong>
                                             <p class="small">Biaya pendaftaran hanya dapat dibayarkan setelah Anda menyelesaikan semua tahapan pendaftaran di atas.
                                                 <br />
