@@ -21,11 +21,14 @@ class RegisterController extends Controller
         $validator = $request->validate(
             [
                 'email' => 'required|email|unique:users,username,email',
+                'username' => 'required|unique:users,username',
                 'password' => 'required|min:8|max:15'
             ],
             [
                 'email.unique' => 'emailnya udah ada bang coba cari email',
                 'email.required' => 'isi lah bang email nya',
+                'username.unique' => 'usernamenya udah ada bang coba cari username',
+                'username.required' => 'isi lah bang username nya',
                 'password.required' => 'bang isi lah passwordnya.',
                 'password.min' => 'minimal 8 bang',
                 'password.max' => 'jangan lebih dari 15 bang'
