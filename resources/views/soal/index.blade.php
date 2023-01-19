@@ -44,7 +44,11 @@
                             <tr>
                                 <td>Soal Ujian</td>
                                 <td>
-                                    <a href="/dashboard/soal/tinjau" class="btn btn-primary">Tinjau</a>
+                                    <form action="{{route('hapus.soal')}}" method="post" id="form-hapus-soal">
+                                        @csrf
+                                        <a href="/dashboard/soal/tinjau" class="btn btn-sm btn-primary">Tinjau</a>
+                                        <button type="button" class="btn-hapus btn btn-sm btn-danger">Hapus</button>
+                                    </form>
                                 </td>
                             </tr>
                         </tbody>
@@ -63,4 +67,27 @@
     @include('dashboard.modalImportNilai')
     @include('dashboard.modalImportSoal')
 @endcan
-@endsection
+@stop
+@push('js')
+<script>
+    $(function(){
+      $(document).on("click", ".btn-hapus", function (e) {
+              e.preventDefault();
+              Swal.fire({
+              icon: 'warning',
+              html: 'Anda Akan Menghapus Data<br><strong>Soal Ujian</strong> ?',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Ya, hapus!',
+              cancelButtonText: 'Batal'
+          }).then((result) => {
+                if (result.isConfirmed) {
+                    $("#form-hapus-soal").submit();
+                }
+            });
+
+          });
+        });
+  </script>
+@endpush

@@ -27,12 +27,13 @@
             @csrf
             @include('layouts.soalLayout')
             <hr />
-            <button type="submit" name="Submit" id="Submit" class="btn btn-primary">Simpan</button>
+            <button type="button" name="Submit" id="Submit" class="btn btn-primary">Simpan</button>
             <button type="reset" class="btn btn-danger">Reset</button>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="text/javascript">
             $(document).ready(function() {
               var detik = 0; // Jumlah Detik Waktu Hitung Mundur
@@ -60,6 +61,27 @@
           history.go(1);
 
         }; </script>
+        <script>
+            $(function(){
+              $(document).on("click", "#Submit", function (e) {
+                      e.preventDefault();
+                      Swal.fire({
+                      icon: 'warning',
+                      html: 'Yakin dengan <strong> Jawaban </strong> anda ? <br> klik <strong>Yakin!</strong> untuk menyimpan jawaban.',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: 'Yakin!',
+                      cancelButtonText: 'Batal'
+                  }).then((result) => {
+                        if (result.isConfirmed) {
+                            $("#form").submit();
+                        }
+                    });
+        
+                  });
+                });
+          </script>
 
 </body>
 

@@ -112,7 +112,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="ms-4">
-                            <p>Pada Tahun 2031 Universitas Suryakancana Menjadi Perguruan Tinggi Berstandar
+                            <p>Pada Tahun 2031 Universitas Khayangan Menjadi Perguruan Tinggi Berstandar
                                 Internasional, Unggul, Mandiri dalam Ilmu Pengetahuan dan Teknologi, Beriman dan
                                 Bertaqwa kepada Tuhan Yang Maha Esa serta Mewujudkan Kesejahteraan bagi Masyarakat. </p>
                         </div>

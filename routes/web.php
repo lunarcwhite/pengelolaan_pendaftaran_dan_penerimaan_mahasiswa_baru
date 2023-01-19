@@ -70,6 +70,7 @@ Route::controller(SoalController::class)->group(function () {
     Route::get('/dashboard/soal/{no_reg}', 'show')->middleware(['pendaftar', 'soal', 'revalidate']);
     Route::post('/dashboard/soal', 'submit')->name('soal.submit')->middleware('pendaftar');
     Route::post('/admin/nilai/import', 'importNilai')->middleware(['admin','auth']);
+    Route::post('/admin/hapus/soal', 'hapusSoal')->name('hapus.soal')->middleware(['admin','auth']);
 });
 
 Route::middleware(['admin','auth'])->group(function () {

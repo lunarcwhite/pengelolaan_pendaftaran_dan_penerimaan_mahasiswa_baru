@@ -69,7 +69,20 @@ class SoalController extends Controller
     {
         Excel::import(new NilaiImport, $request->file('file'));
 
-        return redirect()->back();
+        $notification = [
+            'message' => 'Soal Ujian Berhasil Diimport',
+            'alert-type' => 'success'
+        ];
+        return redirect()->back()->with($notification);
+    }
+    public function hapusSoal()
+    {
+        DB::table('soals')->delete();
+        $notification = [
+            'message' => 'Soal Ujian Berhasil Dihapus',
+            'alert-type' => 'success'
+        ];
+        return redirect()->back()->with($notification);
     }
 
 }
