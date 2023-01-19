@@ -122,6 +122,7 @@
                                 <th>No Registrasi</th>
                                 <th>Nama</th>
                                 <th>Total Nilai</th>
+                                <th>Status</th>
                                 <th>Aksi</th>
                             </thead>
                             <tbody>
@@ -149,13 +150,16 @@
                                             {{ $total_nilai }}
                                         </td>
                                         <td>
-                                            <a href="/dashboard/lihat/{{ $item->no_reg }}" class="btn btn-success">Lihat</a>
-                                            @if ($item->lulus == 1)
+                                            @if($item->lulus == 1)
                                                 <button class="btn btn-success">Lulus</button>
                                             @endif
-                                            @if ($item->lulus == 0)
+                                            @if($item->lulus == 0)
                                                 <button class="btn btn-danger">Tidak</button>
                                             @endif
+                                        </td>
+                                        <td>
+                                            <a href="/dashboard/lihat/{{ $item->no_reg }}" class="btn btn-success">Lihat</a>
+                                            
                                         </td>
                                     </tr>
                                 @empty
