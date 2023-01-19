@@ -2,6 +2,7 @@
 @section('content')
     @can('pendaftar')
         <div class="main-content">
+            
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="row">
@@ -59,14 +60,14 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <a href="/dashboard/soal/{{ Crypt::encryptString($pendaftar->no_reg) }}"
-                                        class="au-btn au-btn-icon au-btn--blue">
+                                    <a id="soal-ujian"
+                                        class="au-btn btn-soal au-btn-icon au-btn--blue">
                                         <i class="zmdi zmdi-plus"></i>Jawab Soal Ujian</a>
                                 </div>
                             </div>
                         </div>
                     
-                    @elseif($pendaftar == true && $pendaftar->nilai_ujian > null)
+                    @elseif($pendaftar == true && $pendaftar->nilai_ujian > null || $pendaftar == true && $pendaftar->nilai_ujian >= 0)
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
@@ -101,6 +102,30 @@
         </div>
                 </div>
             </div> --}}
+            @push('js')
+<script>
+    $(function(){
+      $(document).on("click", ".btn-soal", function (e) {
+              e.preventDefault();
+              url = '/dashboard/soal/{{ Crypt::encryptString($pendaftar->no_reg) }}"';
+              Swal.fire({
+              icon: 'warning',
+              html: 'Pastikan <strong> Koneksi Stabil dan Tidak ada gangguan </strong> <br> klik <strong>Mulai!</strong> untuk memulai ujian.',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Mulai!',
+              cancelButtonText: 'Batal'
+          }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = url;
+                }
+            });
+
+          });
+        });
+  </script>
+@endpush
     @endcan
 
     @can('admin')
@@ -174,4 +199,4 @@
             </div>
         </div>
     @endcan
-@endsection
+@stop

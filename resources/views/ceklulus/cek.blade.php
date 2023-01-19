@@ -52,7 +52,7 @@
                     <div id="app" v-cloak>
 					<div class="d-flex flex-column flex-center w-100 min-h-350px min-h-lg-500px px-9">
                         <!--begin::Alert-->
-                            <div class="alert alert-dismissible bg-light-warning border border-primary d-flex flex-column flex-sm-row p-5 mb-10">
+                            <div class="alert alert-dismissible bg-light-warning border border-primary d-flex flex-column flex-sm-row p-5 mb-2">
 
                                 <div class="d-flex flex-column pe-0 pe-sm-10">
                                     <!--begin::Title-->
@@ -103,6 +103,8 @@
                                                     <br>
                                                     <h5 class="text-dark"><b>STATUS</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : &nbsp; <span class="badge badge-success"> LULUS</span></h5>
                                                 </div>
+                                                <br>
+        
                                                 <div class="1845093690text-center">
                                                     <a :href="'/skl/'+ st.no_reg"><button class="btn btn-sm btn-primary">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-check-fill" viewBox="0 0 16 16">
@@ -127,8 +129,6 @@
                                             </div>
                                         </div>
 
-                                        @else
-
                                         @endif
                                         </div>
                                     </div>
@@ -139,7 +139,7 @@
                             <div id="kick-start" class="card text-center bg-warning">
                                 <div class="card-header">
                                     <h4 class="card-title text-white">PENGUMUMAN KELULUSAN BELUM DI BUKA</h4>
-                                    <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                                    <a class="heading-elements-toggle"></a>
 
                                 </div>
                             </div>
@@ -272,7 +272,7 @@
             // If the count down is over, write some text
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("demo").innerHTML = "PENGUMUMAN SUDAH DIBUKA";
+                document.getElementById("demo").innerHTML = "PENGUMUMAN";
             }
         }, 1000);
     </script>

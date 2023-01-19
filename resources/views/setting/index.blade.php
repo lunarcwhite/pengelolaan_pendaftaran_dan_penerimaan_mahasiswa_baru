@@ -19,6 +19,7 @@
                             <th>Status</th>
                             <th>Tanggal Dimulai</th>
                             <th>Jam Dimulai</th>
+                            <th>Waktu Ujian</th>
                             <th>Aksi</th>
                         </thead>
                         <tbody>
@@ -27,8 +28,17 @@
                                     <td v-if="setting.status == 0" class="font-14"><span class="badge badge-danger"> DITUTUP</span></td>
                                     <td class="font-14">@{{ setting.date }}</td>
                                     <td class="font-14">@{{ setting.time }}</td>
+                                    <td></td>
                                     <td><button type="button" id="btn-edit-setting" class="btn btn-info warning"
                                         data-toggle="modal" data-id="{{$setting->id}}" data-target="#editSetting">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge badge-success"> DIBUKA</span></td>
+                                    <td class="font-14">--</td>
+                                    <td class="font-14">--</td>
+                                    <td>{{$waktu->menit / 60}} MENIT</td>
+                                    <td><button type="button" id="btn-edit-waktu" class="btn btn-info warning"
+                                        data-toggle="modal" data-id="{{$waktu->id}}" data-target="#editWaktu">Edit</button></td>
                                 </tr>
                         </tbody>
                     </table>
@@ -45,6 +55,7 @@
     </div>
 </div>
 @include('setting.edit')
+@include('setting.waktu')
 @endcan
 @stop
 @push('js')
@@ -76,6 +87,30 @@
                     });
             });
         });
+</script>
+<script>
+    $(function () {
+           $(document).on('click', '#btn-edit-waktu', function () {
+               let id = $(this).data('id');
+               $.ajax({
+                   type: "get",
+                   url: "{{url('/dashboard/setting')}}/" + id,
+                   dataType: 'json',
+                   success: function (res) {
+                       $('#waktu').val(res.menit / 60);
+                       $('#idwaktu').val(res.id);
+                   },
+               }).catch(function(error) {
+                       vm.loading = false;
+                       console.log(error);
+                       Swal.fire(
+                           'Terjadi Kesalahan!',
+                           'Pastikan data terisi dengan benar.',
+                           'error'
+                       )
+                   });
+           });
+       });
 </script>
 <script>
     new Vue({

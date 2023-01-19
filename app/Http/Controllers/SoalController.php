@@ -6,6 +6,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\SoalImport;
 use App\Models\Pendaftar;
 use App\Models\Soal;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -35,21 +36,28 @@ class SoalController extends Controller
     {
         $id = Crypt::decryptString($id);
         $pendaftar = Pendaftar::find($id)->first();
+        $waktu = Setting::where('id', 2)->first();
         $soal = Soal::inRandomOrder()->get();
-        return view('soal.show', compact('pendaftar', 'soal'));
+        return view('soal.show', compact('pendaftar', 'soal', 'waktu'));
     }
     public function submit(Request $request)
     {
         $jawaban = $request->jawaban;
-        $soal = $request->no;
         $id = Auth::user()->id;
+        if($jawaban == null){
+            DB::table('pendaftars')->where('user_id', $id)->update(['nilai_ujian' => 0]);
+        return redirect('/dashboard');
+        }
+        $soal = $request->no;
         $z = null;
         foreach ($jawaban as $value => $item) {
             $db = DB::table('soals')->where('jawaban_benar', '=', $item)
                 ->where('id', $soal[$value])
                 ->exists();
+            $nilai = DB::table('soals')->where('jawaban_benar', '=', $item)
+                ->where('id', $soal[$value])->first();
             if ($db == true) {
-                $z += 20;
+                $z += $nilai->bobot_nilai;
             } else {
                 $z += 0;
             }
@@ -61,6 +69,20 @@ class SoalController extends Controller
     {
         Excel::import(new NilaiImport, $request->file('file'));
 
-        return redirect()->back();
+        $notification = [
+            'message' => 'Soal Ujian Berhasil Diimport',
+            'alert-type' => 'success'
+        ];
+        return redirect()->back()->with($notification);
     }
+    public function hapusSoal()
+    {
+        DB::table('soals')->delete();
+        $notification = [
+            'message' => 'Soal Ujian Berhasil Dihapus',
+            'alert-type' => 'success'
+        ];
+        return redirect()->back()->with($notification);
+    }
+
 }

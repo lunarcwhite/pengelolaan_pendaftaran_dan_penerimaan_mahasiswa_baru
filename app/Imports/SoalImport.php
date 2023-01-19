@@ -16,10 +16,12 @@ class SoalImport implements ToModel, WithHeadingRow
         $soal = $row['soal'];
         $jawaban_benar = $row['jawaban_benar'];
         $pilihan_jawaban = $row['pilihan_jawaban'];
+        $bobot = $row['bobot_nilai'];
         return new Soal([
             'soal' => $soal,
             'jawaban_benar' => $jawaban_benar,
-            'pilihan_jawaban' => $pilihan_jawaban
+            'pilihan_jawaban' => $pilihan_jawaban,
+            'bobot_nilai' => $bobot
         ]);
     }
 }
