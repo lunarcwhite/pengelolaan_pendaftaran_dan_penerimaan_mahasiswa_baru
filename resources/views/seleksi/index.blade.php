@@ -49,7 +49,7 @@
                                             class="fa fa-file-pdf"></i> Print Hasil</a>
                                     <a href="{{ route('emails.Pemberitahuan') }}" class="btn btn-light"><i
                                             class="fa fa-box"></i>
-                                        Kirim Email Kelulusan</a>
+                                        Kirim Email Pengumuman Kelulusan</a>
                                 </div>
                                 <hr />
                             </div>

@@ -77,13 +77,13 @@
                                     <div class="card-body card-dashboard text-center">
 
                                     <h3 class="text-dark mb-15">SILAHKAN CEK KELULUSAN ANDA</h3>
-                                    <small class="text-dark mb-15">MASUKAN NO UJIAN DAN KLIK TOMBOL CEK</small>
+                                    <small class="text-dark mb-15">MASUKAN NO REGISTRASI DAN KLIK TOMBOL CEK</small>
 
                                         <br>
                                         <form @submit.prevent="submitSearch">
 
                                             <div class="form-group text-center">
-                                                <input type="text" v-model="search" class="form-control" id="maxlength-position-inside" placeholder="NO .UJIAN" maxlength="17" />
+                                                <input type="text" v-model="search" class="form-control" id="maxlength-position-inside" placeholder="NO REGISTRASI" maxlength="17" />
                                             </div>
                                             <br>
                                             <button type="submit" class="btn btn-success">CEK</button>

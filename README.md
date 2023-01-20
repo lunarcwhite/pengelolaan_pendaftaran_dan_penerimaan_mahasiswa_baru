@@ -3,9 +3,10 @@
 <strong>Studi Kasus di Kampus tentang pengelolaan pendaftaran dan penerimaan mahasiswa baru</strong>
 <hr/>
 Anggota :
-<li> Dendi Pratama Putra Pamungkas (5520120122)</li>
-<li> Muhammad Farhan Novian (55202120017)</li>
-<li> Muhamad Rizky Maulana S</li>
+<li> Dendi Pratama Putra Pamungkas (5520120122) (dendipratamaputrapamungkas)</li>
+
+<li> Muhammad Farhan Novian (55202120017) ( zennvoan12)</li>
+<li> Muhamad Rizky Maulana S (5520120071) (lunarcwhite)</li>
 
 Langkah Instalasi
 <hr/>

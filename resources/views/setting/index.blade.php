@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="overview-wrap">
-                            <h2 class="title-1">DETAIL PENGUMUMAN</h2>
+                            <h2 class="title-1">Setting Waktu</h2>
                         </div>
                     </div>
                 </div>
@@ -16,6 +16,7 @@
                 <div class="table-responsive-sm">
                     <table class="table table-hover bg-white">
                         <thead>
+                            <th>Nama Settingan</th>
                             <th>Status</th>
                             <th>Tanggal Dimulai</th>
                             <th>Jam Dimulai</th>
@@ -24,6 +25,7 @@
                         </thead>
                         <tbody>
                                 <tr>
+                                    <td>Waktu Pengumuman Kelulusan</td>
                                     <td v-if="setting.status == 1" class="font-14"><span class="badge badge-success"> DIBUKA</span></td>
                                     <td v-if="setting.status == 0" class="font-14"><span class="badge badge-danger"> DITUTUP</span></td>
                                     <td class="font-14">@{{ setting.date }}</td>
@@ -33,6 +35,7 @@
                                         data-toggle="modal" data-id="{{$setting->id}}" data-target="#editSetting">Edit</button></td>
                                 </tr>
                                 <tr>
+                                    <td>Waktu Ujian</td>
                                     <td><span class="badge badge-success"> DIBUKA</span></td>
                                     <td class="font-14">--</td>
                                     <td class="font-14">--</td>
